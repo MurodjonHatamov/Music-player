@@ -79,7 +79,7 @@ audio.play();
             audio.play()
          
         }else{
-            audio.pause
+            audio.pause()
         }
     });
 
@@ -143,7 +143,6 @@ const playing = (e) => {
 
 
 
-
 const menu=document.querySelector(".menu");
 const music_list=document.querySelector(".music_list");
 const delet=document.querySelector(".delet");
@@ -180,34 +179,6 @@ boxs.innerHTML+=`
 
 `
 })
- 
-const selectMusic = (id)=>{
-    index=id;
-    ChangeMusic();
-    body.classList.add("playing")
-    audio.play();
-    
-}
-
-
-document.addEventListener("keypress" , (e)=>{
-
-if(e.key=="."){
-  
-    index--;
-    if (index < 0) {
-        index = musics.length - 1
-    };
-    ChangeMusic();
-
-    if(!body.classList.contains("playing")){
-        body.classList.add("playing")
-    audio.play();
-     
-    }else{
-        audio.play()
-    }
-}
 const VoiceIconFunk = ()=>{
     if (voice.value >= 50) {
         orta.style = "display: none"
@@ -227,13 +198,41 @@ const VoiceIconFunk = ()=>{
            past.style= "    display: block"
         }
 }
+const selectMusic = (id)=>{
+    index=id;
+    ChangeMusic();
+    body.classList.add("playing")
+    audio.play();
+    
+}
 
-    voice.addEventListener('input' , ()=>{
-        audio.volume = voice.value/100;
-    
-        VoiceIconFunk();
-    
-    }  )
+voice.addEventListener('input' , ()=>{
+    audio.volume = voice.value/100;
+
+    VoiceIconFunk();
+
+}  )
+document.addEventListener("keypress" , (e)=>{
+
+if(e.key=="."){
+  
+    index--;
+    if (index < 0) {
+        index = musics.length - 1
+    };
+    ChangeMusic();
+
+    if(!body.classList.contains("playing")){
+        body.classList.add("playing")
+    audio.play();
+     
+    }else{
+        audio.play()
+    }
+}
+
+
+
     
  
 
@@ -273,10 +272,6 @@ else if(e.key == "+"){
     
 VoiceIconFunk();
 })
-
-
-
-
 
 
 
