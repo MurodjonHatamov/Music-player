@@ -1,0 +1,222 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+
+body{
+    background-image: url("../imgs/bod.jpg");
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: "Montserrat", serif;
+}    
+
+.music_player{
+    position:absolute;
+    color: white;
+    width: 400px;
+    border-radius: 10px;
+    background-color: rgba(237, 233, 233, 0);
+    backdrop-filter: blur(5px);
+    text-align: center;
+    padding: 50px 30px;
+    box-shadow: 0px 0px 18px 3px ;
+}
+.music_name{
+    font-size: 40px;
+    
+    margin-bottom: 14px;
+   
+}
+
+.music_img img{
+    width: 200px ;
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 8px solid rgb(2, 49, 204);
+    animation: animate 6s linear infinite; 
+    animation-play-state: paused;
+}
+body.playing .music_img img{
+    animation-play-state:running; 
+}
+
+input{
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+.music_info{
+    width:80%;
+    height: 10px;
+    background-color: rgba(8, 0, 255, 0.268);
+    border-radius: 2px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.color{
+    width: 100%;
+    background-color: rgb(6, 14, 231);
+    height: 100%;
+    border-right: 1px solid black;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    
+}
+
+
+.control{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 40px;
+  
+}
+ 
+.control i{
+    cursor: pointer;
+}
+
+.play_icon{
+    display: none;
+}
+
+body.playing .play_icon{
+    display: block;
+}
+
+body.playing .pause_icon{
+    display: none;
+}
+
+
+.time{
+    width:80%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu{
+    position: absolute;
+    left: 15px;
+    top: 15px ;
+    cursor: pointer;
+   
+}
+.orta{
+    display: none;
+}
+.past{
+    display: none;
+}
+
+.baland{
+    display: block;
+
+}
+.input{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+}
+
+
+.delet{
+color: rgb(14, 14, 206);
+margin-bottom: 10px;
+padding: 4px;
+}
+
+
+.music_list{
+    display: none;
+    text-align: end;
+    padding: 10px;
+  width: 200px;
+   height: 300px; 
+background-color: rgb(2, 2, 46);
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+   
+}
+.box{  
+    width: 150px;
+    text-align: start;
+    display: flex;
+   
+    align-items: center;
+ gap: 20px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.box i{
+color: rgb(38, 38, 250);
+font-size: 25px;
+
+}
+
+.voisevalue{
+    width: 35px;
+}
+
+.box:hover{
+background-color: rgb(2, 2, 75);
+}
+.boxs{overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    overflow-y:auto;
+    height: 250px;
+}
+::-webkit-scrollbar{
+width: 10px;
+
+}
+::-webkit-scrollbar-track {
+    background: #0700e044; 
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #007bff; 
+    border-radius: 10px; 
+ 
+  }
+
+@keyframes animate {
+    0%{
+transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+            }
+}
+
+
+
+
+
+
